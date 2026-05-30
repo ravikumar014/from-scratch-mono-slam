@@ -5,8 +5,8 @@ type: software
 
 authors:
 
-* family-names: Kumar
-  given-names: Ravi
+* family-names: Ravi Kumar U
+  given-names: Ravi Kumar U
 
 repository-code: "https://github.com/ravikumar014/from-scratch-mono-slam.git"
 
