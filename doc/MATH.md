@@ -29,15 +29,9 @@ Visual SLAM operates across multiple coordinate systems.
 
 ## World Coordinates
 
-[
-X_w=
-\begin{bmatrix}
-X_w\
-Y_w\
-Z_w\
-1
-\end{bmatrix}
-]
+$$
+X_w= \begin{bmatrix} X_w\ Y_w\ Z_w\ 1 \end{bmatrix}
+$$
 
 Represents a point in the global map.
 
@@ -45,32 +39,27 @@ Represents a point in the global map.
 
 ## Camera Coordinates
 
-[
-X_c=
-\begin{bmatrix}
-X_c\
-Y_c\
-Z_c
-\end{bmatrix}
-]
+$$
+X_c= \begin{bmatrix} X_c\ Y_c\ Z_c \end{bmatrix}
+$$
 
 Relationship:
 
-[
+$$
 X_c = RX_w+t
-]
+$$
 
 where
 
-[
+$$
 R \in SO(3)
-]
+$$
 
 and
 
-[
+$$
 t\in\mathbb{R}^3
-]
+$$
 
 ---
 
@@ -78,13 +67,9 @@ t\in\mathbb{R}^3
 
 Image points:
 
-[
-x=
-\begin{bmatrix}
-u\
-v
-\end{bmatrix}
-]
+$$
+x=\begin{bmatrix} u\ v \end{bmatrix}
+$$
 
 represent pixel locations.
 
@@ -94,22 +79,15 @@ represent pixel locations.
 
 Euclidean point:
 
-[
+$$
 (x,y)
-]
+$$
 
 becomes
 
-[
-\tilde{x}
-=========
-
-\begin{bmatrix}
-x\
-y\
-1
-\end{bmatrix}
-]
+$$
+\tilde{x} = \begin{bmatrix} x\ y\1 \end{bmatrix}
+$$
 
 Advantages:
 
@@ -123,23 +101,21 @@ Advantages:
 
 A camera maps:
 
-[
-\mathbb{R}^3
-\rightarrow
-\mathbb{R}^2
-]
+$$
+\mathbb{R}^3 \rightarrow \mathbb{R}^2
+$$
 
 using:
 
-[
+$$
 x = K[R|t]X
-]
+$$
 
 where:
 
-[
+$$
 P=K[R|t]
-]
+$$
 
 is called the projection matrix.
 
@@ -149,12 +125,12 @@ is called the projection matrix.
 
 The intrinsic matrix is:
 
-K=\begin{bmatrix}f_x&0&c_x\0&f_y&c_y\0&0&1\end{bmatrix}
+$ K=\begin{bmatrix}f_x&0&c_x\0&f_y&c_y\0&0&1\end{bmatrix}$
 
 where:
 
-* (f_x,f_y) = focal lengths
-* (c_x,c_y) = principal point
+* $f_x,f_y$ = focal lengths
+* $c_x,c_y$ = principal point
 
 ---
 
@@ -162,31 +138,27 @@ where:
 
 The pose matrix is:
 
-[
-T=
-\begin{bmatrix}
-R&t\
-0&1
-\end{bmatrix}
-]
+$$
+T= \begin{bmatrix} R&t\ 0&1 \end{bmatrix}
+$$
 
 where:
 
-[
+$$
 R^TR=I
-]
+$$
 
 and
 
-[
+$$
 det(R)=1
-]
+$$
 
 This defines the Special Euclidean Group:
 
-[
+$$
 SE(3)
-]
+$$
 
 ---
 
@@ -194,50 +166,35 @@ SE(3)
 
 A valid rotation matrix satisfies:
 
-[
+$$
 R^TR=I
-]
+$$
 
 and
 
-[
+$$
 det(R)=1
-]
+$$
 
 Examples:
 
 Rotation around x-axis:
 
-[
-R_x(\theta)=
-\begin{bmatrix}
-1&0&0\
-0&\cos\theta&-\sin\theta\
-0&\sin\theta&\cos\theta
-\end{bmatrix}
-]
+$$
+R_x(\theta)= \begin{bmatrix} 1&0&0\ 0&\cos\theta&-\sin\theta\ 0&\sin\theta&\cos\theta \end{bmatrix}
+$$
 
 Rotation around y-axis:
 
-[
-R_y(\theta)=
-\begin{bmatrix}
-\cos\theta&0&\sin\theta\
-0&1&0\
--\sin\theta&0&\cos\theta
-\end{bmatrix}
-]
+$$
+R_y(\theta)= \begin{bmatrix} \cos\theta&0&\sin\theta\ 0&1&0\ -\sin\theta&0&\cos\theta \end{bmatrix}
+$$
 
 Rotation around z-axis:
 
-[
-R_z(\theta)=
-\begin{bmatrix}
-\cos\theta&-\sin\theta&0\
-\sin\theta&\cos\theta&0\
-0&0&1
-\end{bmatrix}
-]
+$$
+R_z(\theta)= \begin{bmatrix} \cos\theta&-\sin\theta&0\ \sin\theta&\cos\theta&0\ 0&0&1 \end{bmatrix}
+$$
 
 ---
 
@@ -245,33 +202,29 @@ R_z(\theta)=
 
 Let
 
-[
+$$
 d_i
-]
+$$
 
 and
 
-[
+$$
 d_j
-]
+$$
 
 be ORB descriptors.
 
 The Hamming distance is:
 
-[
-H(d_i,d_j)
-==========
-
-\sum_{k=1}^{n}
-(d_{ik}\oplus d_{jk})
-]
+$$
+H(d_i,d_j) =\sum_{k=1}^{n} (d_{ik}\oplus d_{jk})
+$$
 
 where
 
-[
+$$
 \oplus
-]
+$$
 
 denotes XOR.
 
@@ -285,33 +238,33 @@ Consider two camera views.
 
 A point:
 
-[
+$$
 X
-]
+$$
 
 projects to:
 
-[
+$$
 x_1
-]
+$$
 
 and
 
-[
+$$
 x_2
-]
+$$
 
 The relationship between the two observations is:
 
-[
+$$
 x_2^T F x_1 = 0
-]
+$$
 
 where
 
-[
+$$
 F
-]
+$$
 
 is the Fundamental Matrix.
 
@@ -321,36 +274,31 @@ is the Fundamental Matrix.
 
 For two cameras:
 
-[
+$$
 P_1=[I|0]
-]
+$$
 
-[
+$$
 P_2=[R|t]
-]
+$$
 
 The epipolar constraint becomes:
 
-[
+$$
 x_2^T[t]_\times R x_1=0
-]
+$$
 
 where
 
-[
+$$
 [t]_\times
-]
+$$
 
 is the skew-symmetric matrix:
 
-[
-[t]_\times=
-\begin{bmatrix}
-0&-t_z&t_y\
-t_z&0&-t_x\
--t_y&t_x&0
-\end{bmatrix}
-]
+$$
+[t]_\times= \begin{bmatrix} 0&-t_z&t_y\ t_z&0&-t_x\ -t_y&t_x&0 \end{bmatrix}
+$$
 
 ---
 
@@ -358,25 +306,25 @@ t_z&0&-t_x\
 
 The Essential Matrix is:
 
-E=[t]_{\times}R
+$E=[t]_{\times}R$
 
 Properties:
 
-[
+$$
 rank(E)=2
-]
+$$
 
 and
 
-[
+$$
 det(E)=0
-]
+$$
 
 The constraint becomes:
 
-[
+$$
 x_2^T E x_1 = 0
-]
+$$
 
 for normalized coordinates.
 
@@ -386,39 +334,33 @@ for normalized coordinates.
 
 Given at least eight correspondences:
 
-[
-(x_i,y_i)
-\leftrightarrow
-(x_i',y_i')
-]
+$$
+(x_i,y_i) \leftrightarrow (x_i',y_i')
+$$
 
 construct:
 
-[
-A=
-\begin{bmatrix}
-x_1x_1' & x_1y_1' & x_1 & y_1x_1' & y_1y_1' & y_1 & x_1' & y_1' & 1 \
-\vdots
-\end{bmatrix}
-]
+$$
+A= \begin{bmatrix} x_1x_1' & x_1y_1' & x_1 & y_1x_1' & y_1y_1' & y_1 & x_1' & y_1' & 1 \ \vdots \end{bmatrix}
+$$
 
 The solution satisfies:
 
-[
+$$
 Af=0
-]
+$$
 
 Solve using SVD:
 
-[
+$$
 A=U\Sigma V^T
-]
+$$
 
 The Fundamental Matrix is reshaped from:
 
-[
+$
 f
-]
+$
 
 corresponding to the smallest singular value.
 
@@ -430,13 +372,13 @@ Many stages of SLAM rely on SVD.
 
 General form:
 
-A=U\Sigma V^T
+$A=U\Sigma V^T$
 
 where:
 
-* (U) orthogonal
-* (V) orthogonal
-* (\Sigma) diagonal
+* $U$ orthogonal
+* $V$ orthogonal
+* $\Sigma$ diagonal
 
 Applications:
 
@@ -451,32 +393,27 @@ Applications:
 
 Given:
 
-[
+$$
 E=U\Sigma V^T
-]
+$$
 
 Define:
 
-[
-W=
-\begin{bmatrix}
-0&-1&0\
-1&0&0\
-0&0&1
-\end{bmatrix}
-]
+$$
+W= \begin{bmatrix} 0&-1&0\ 1&0&0\ 0&0&1 \end{bmatrix}
+$$
 
 Then:
 
-[
+$$
 R=UWV^T
-]
+$$
 
 and
 
-[
+$$
 t=U(:,3)
-]
+$$
 
 These provide relative camera motion.
 
@@ -486,22 +423,15 @@ These provide relative camera motion.
 
 Camera trajectory is formed by repeated multiplication:
 
-[
-T_k
-===
-
-T_{rel}
-T_{k-1}
-]
+$$
+T_k = T_{rel} T_{k-1}
+$$
 
 Expanding:
 
-[
-T_k
-===
-
-T_kT_{k-1}\cdots T_1
-]
+$$
+T_k = T_kT_{k-1}\cdots T_1
+$$
 
 This accumulates motion over time.
 
@@ -513,9 +443,9 @@ Goal:
 
 Recover 3D point:
 
-[
+$
 X
-]
+$
 
 from image observations.
 
@@ -525,23 +455,23 @@ from image observations.
 
 For camera:
 
-[
+$
 P_1
-]
+$
 
-[
+$
 x_1=P_1X
-]
+$
 
 For camera:
 
-[
+$
 P_2
-]
+$
 
-[
+$
 x_2=P_2X
-]
+$
 
 ---
 
@@ -549,31 +479,25 @@ x_2=P_2X
 
 Cross-product constraints:
 
-[
+$$
 x_1\times(P_1X)=0
-]
+$$
 
-[
+$$
 x_2\times(P_2X)=0
-]
+$$
 
 These generate:
 
-[
+$
 AX=0
-]
+$
 
 with:
 
-[
-A=
-\begin{bmatrix}
-x_1P_1^{(3)}-P_1^{(1)}\
-y_1P_1^{(3)}-P_1^{(2)}\
-x_2P_2^{(3)}-P_2^{(1)}\
-y_2P_2^{(3)}-P_2^{(2)}
-\end{bmatrix}
-]
+$$
+A= \begin{bmatrix} x_1P_1^{(3)}-P_1^{(1)}\ y_1P_1^{(3)}-P_1^{(2)}\ x_2P_2^{(3)}-P_2^{(1)}\ y_2P_2^{(3)}-P_2^{(2)} \end{bmatrix}
+$$
 
 ---
 
@@ -581,15 +505,15 @@ y_2P_2^{(3)}-P_2^{(2)}
 
 Compute:
 
-[
+$$
 A=U\Sigma V^T
-]
+$$
 
 The reconstructed point is:
 
-[
+$$
 X=V(:,4)
-]
+$$
 
 corresponding to the smallest singular value.
 
@@ -599,26 +523,15 @@ corresponding to the smallest singular value.
 
 Triangulation returns:
 
-[
-X=
-\begin{bmatrix}
-X\
-Y\
-Z\
-W
-\end{bmatrix}
-]
+$$
+X= \begin{bmatrix} X\ Y\ Z\ W \end{bmatrix}
+$$
 
 Convert to Euclidean coordinates:
 
-[
-X=
-\left(
-\frac{X}{W},
-\frac{Y}{W},
-\frac{Z}{W}
-\right)
-]
+$$
+X= \left( \frac{X}{W}, \frac{Y}{W}, \frac{Z}{W} \right)
+$$
 
 ---
 
@@ -626,18 +539,17 @@ X=
 
 Parallax:
 
-[
-p=
-|x_1-x_2|
-]
+$$
+p= |x_1-x_2|
+$$
 
 Depth uncertainty:
 
-[
+$$
 \sigma_Z
 \propto
 \frac{1}{p}
-]
+$$
 
 Large parallax:
 
@@ -653,18 +565,18 @@ Small parallax:
 
 Projected estimate:
 
-[
+$$
 \hat{x}=PX
-]
+$$
 
 Error:
 
-e=|x-\hat{x}|_2
+$e=|x-\hat{x}|_2$
 
 where:
 
-* (x) = observed point
-* (\hat{x}) = projected point
+* $x$ = observed point
+* $\hat{x}$ = projected point
 
 Smaller error implies higher reconstruction quality.
 
@@ -674,16 +586,16 @@ Smaller error implies higher reconstruction quality.
 
 Many SLAM problems are written as:
 
-[
+$$
 \min_x
 \sum_i r_i^2
-]
+$$
 
 where:
 
-[
+$
 r_i
-]
+$
 
 is a residual.
 
@@ -702,14 +614,9 @@ Bundle Adjustment jointly optimizes:
 
 Objective:
 
-[
-\min
-\sum_{i,j}
-|
-x_{ij}
--\pi(T_i,X_j)
-|^2
-]
+$$
+\min \sum_{i,j} | x_{ij} -\pi(T_i,X_j) |^2
+$$
 
 This is a nonlinear least-squares problem.
 
@@ -719,26 +626,20 @@ This is a nonlinear least-squares problem.
 
 Update rule:
 
-[
-\Delta x
-========
-
--(J^TJ)^{-1}J^Tr
-]
+$$
+\Delta x = -(J^TJ)^{-1}J^Tr
+$$
 
 where:
 
-* (J) = Jacobian
-* (r) = residual vector
+* $J$ = Jacobian
+* $r$ = residual vector
 
 New estimate:
 
-[
-x_{new}
-=======
-
-x+\Delta x
-]
+$$
+x_{new} = x+\Delta x
+$$
 
 ---
 
@@ -746,18 +647,15 @@ x+\Delta x
 
 Improves stability:
 
-[
-(J^TJ+\lambda I)\Delta x
-========================
-
--J^Tr
-]
+$$
+(J^TJ+\lambda I)\Delta x = -J^Tr
+$$
 
 where:
 
-[
+$
 \lambda
-]
+$
 
 controls damping.
 
@@ -769,15 +667,15 @@ Used extensively in modern SLAM systems.
 
 SLAM optimization operates on:
 
-[
+$
 SO(3)
-]
+$
 
 for rotations and
 
-[
+$
 SE(3)
-]
+$
 
 for poses.
 
@@ -787,12 +685,9 @@ for poses.
 
 Special Orthogonal Group:
 
-[
-SO(3)
-=====
-
-{R:R^TR=I,\det(R)=1}
-]
+$$
+SO(3) = {R:R^TR=I,\det(R)=1}
+$$
 
 Represents valid rotations.
 
@@ -802,15 +697,9 @@ Represents valid rotations.
 
 Special Euclidean Group:
 
-[
-SE(3)
-=====
-
-\begin{bmatrix}
-R&t\
-0&1
-\end{bmatrix}
-]
+$$
+SE(3) = \begin{bmatrix} R&t\ 0&1 \end{bmatrix}
+$$
 
 Represents rigid-body motion.
 
@@ -822,31 +711,31 @@ Monocular SLAM cannot determine absolute scale.
 
 If:
 
-[
+$
 t
-]
+$
 
 is valid then
 
-[
+$
 \alpha t
-]
+$
 
 is equally valid.
 
 Thus:
 
-[
+$
 X
 \sim
 \alpha X
-]
+$
 
 for any positive scalar:
 
-[
+$
 \alpha
-]
+$
 
 This is a fundamental limitation of monocular systems.
 
@@ -856,18 +745,15 @@ This is a fundamental limitation of monocular systems.
 
 Each pose estimate contains error:
 
-[
+$$
 T_i+\epsilon_i
-]
+$$
 
 Accumulated trajectory becomes:
 
-[
-\hat{T}
-=======
-
-(T_n+\epsilon_n)\cdots(T_1+\epsilon_1)
-]
+$$
+\hat{T} = (T_n+\epsilon_n)\cdots(T_1+\epsilon_1)
+$$
 
 causing drift.
 
