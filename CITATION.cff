@@ -8,7 +8,7 @@ authors:
 * family-names: Kumar
   given-names: Ravi
 
-repository-code: "https://github.com/<your-username>/from-scratch-mono-slam"
+repository-code: "https://github.com/ravikumar014/from-scratch-mono-slam.git"
 
 abstract: >
 A complete implementation of a Monocular Visual SLAM pipeline in Python using
