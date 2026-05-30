@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+title: "From Scratch Monocular Visual SLAM"
+message: "If you use this repository in your research, please cite it using the metadata below."
+type: software
+
+authors:
+
+* family-names: Kumar
+  given-names: Ravi
+
+repository-code: "https://github.com/<your-username>/from-scratch-mono-slam"
+
+abstract: >
+A complete implementation of a Monocular Visual SLAM pipeline in Python using
+ORB features, Essential Matrix pose estimation, triangulation, sparse mapping,
+and real-time visualization.
+
+keywords:
+
+* visual-slam
+* monocular-slam
+* computer-vision
+* robotics
+* visual-odometry
+* 3d-reconstruction
+* open3d
+* opencv
+
+license: MIT
+
+version: 1.0.0
+
+date-released: 2026-05-30
