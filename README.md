@@ -5,7 +5,7 @@ A complete implementation of a **Monocular Visual SLAM (Simultaneous Localizatio
 The system estimates camera motion from a monocular video stream, reconstructs a sparse 3D map of the environment, and visualizes both the estimated trajectory and reconstructed scene in real time.
 
 <p align="center">
-  <img src="assets/slam_demo2.gif">
+  <img src="assets/slam_demo2.gif" width = "1000">
 </p>
 
 ---
