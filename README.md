@@ -256,21 +256,21 @@ The implementation is based on classical multiple-view geometry.
 
 A 3D point
 
-\[
+$$
 X = [X,Y,Z,1]^T
-\]
+$$
 
 is projected into image coordinates by
 
-\[
+$$
 x = K[R|t]X
-\]
+$$
 
 where:
 
-- \(K\) = Camera Intrinsic Matrix
-- \(R\) = Rotation Matrix
-- \(t\) = Translation Vector
+- $K$ = Camera Intrinsic Matrix
+- $R$ = Rotation Matrix
+- $t$ = Translation Vector
 
 ---
 
@@ -278,15 +278,15 @@ where:
 
 Given corresponding image points:
 
-\[
+$$
 x_2^T E x_1 = 0
-\]
+$$
 
 where:
 
-\[
+$$
 E = [t]_\times R
-\]
+$$
 
 The essential matrix encodes relative camera motion.
 
@@ -296,9 +296,9 @@ The essential matrix encodes relative camera motion.
 
 Pose is recovered from:
 
-\[
+$$
 E = U \Sigma V^T
-\]
+$$
 
 using Singular Value Decomposition (SVD).
 
@@ -316,14 +316,14 @@ This implementation uses linear triangulation via SVD.
 
 For a reconstructed point:
 
-\[
+$$
 e = ||x - \hat{x}||
-\]
+$$
 
 where:
 
-- \(x\) = observed image point
-- \(\hat{x}\) = projected reconstructed point
+- $x$ = observed image point
+- $\hat{x}$ = projected reconstructed point
 
 Points with high reprojection error are rejected.
 
