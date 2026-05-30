@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
 authors:
-- family-names: "Ravi Kumar U"
-  given-names: "Ravi Kumar U"
+- family-names: "Kumar"
+  given-names: "Ravi"
 title: "from-scratch-mono-slam"
 
 abstract: >
