@@ -1,17 +1,18 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
 authors:
-- family-names: "Kumar"
-  given-names: "Ravi"
+  - family-names: "Kumar"
+    given-names: "Ravi"
 title: "from-scratch-mono-slam"
 
 abstract: >
-A complete implementation of a Monocular Visual SLAM pipeline in Python using
-ORB features, Essential Matrix pose estimation, triangulation, sparse mapping,
-and real-time visualization.
+  A complete implementation of a Monocular Visual SLAM pipeline in Python using
+  ORB features, Essential Matrix pose estimation, triangulation, sparse mapping,
+  and real-time visualization.
 
 version: 1.0.0
 
 doi: 10.5281/zenodo.1234
 date-released: 2026-05-30
 url: "https://github.com/ravikumar014/from-scratch-mono-slam.git"
+license: "MIT"
