@@ -125,11 +125,6 @@ from-scratch-mono-slam/
 │   ├── display.py
 │   └── utils.py
 │
-├── notebooks/
-│   ├── SLAM_pipeline_step_by_step.ipynb
-│   ├── mapping.ipynb
-│   └── bundle_adjustment.ipynb
-│
 ├── assets/
 │   ├── slam_demo.gif
 │   └── images/
@@ -414,7 +409,7 @@ If you find this project useful in your research, please cite:
 
 ## Author
 
-**Ravi Kumar**
+**Ravi Kumar U**
 
 M.Tech in Machine Learning and Computing  
 Indian Institute of Space Science and Technology (IIST)
